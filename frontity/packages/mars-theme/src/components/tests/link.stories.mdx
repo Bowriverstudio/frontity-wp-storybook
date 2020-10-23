@@ -1,0 +1,37 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description,
+} from "@storybook/addon-docs/blocks";
+import Link from "../link";
+
+<Meta title="packages/mars-theme/components/Link" component={Link} />
+
+# Link
+
+<Description of={Link} />
+
+
+## Link 
+
+<Canvas>
+  <Story name="Link">
+    <Link>Link Title</Link>
+  </Story>
+</Canvas>
+
+## aria-current page
+
+<Canvas>
+  <Story name="LinkCurrent">
+    <Link aria-current="page">Link Title</Link>
+  </Story>
+</Canvas>
+
+
+
+## Props
+
+<ArgsTable of={Link} />

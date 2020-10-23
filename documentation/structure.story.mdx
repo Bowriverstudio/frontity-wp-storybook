@@ -1,0 +1,52 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+
+<Meta title="Documentation/Structure" />
+
+# Structure
+
+## storybook
+
+Holds the configuration of the storybook.
+
+I put this in the base in the project, so frontity doesn't include additional dependencies, also it allows me to have stories in the wordpress theme.
+
+## frontity
+
+frontity was created with
+
+`npx frontity create frontity`
+
+Added the files in "frontity/testingUtils" as helpers for Storybook.
+Added all the mdx files.
+Modified file src/mars-theme/components/link.js to demo the "Props"
+
+http://localhost:6006/?path=/docs/packages-mars-theme-components-link--link
+
+I did not add any global styles to storybook which would help it render better.
+
+## wp-theme
+
+This is an empty wordpress theme, but typically any customizations or plugins I add here.
+
+## scripts
+
+I did not include it here, but I have a few helper scripts to deploy the wordpress theme or storybook to a staging server.
+
+## Tailwind
+
+To make this as simple as possible, I did not include tailwind but typically include it.
+
+## Documentation
+
+Project Documentation and notes go here.
+I have a private package where I keep global documentation, and just add it to the storybook configuration
+
+## stories
+
+Default Sample storybook stories.

@@ -1,0 +1,81 @@
+{
+    "name": "frontity-wp-storybook",
+    "version": "0.1.1",
+    "private": true,
+    "description": "Frontity",
+    "keywords": [
+        "frontity Storybook Wordpress"
+    ],
+    "scripts": {
+        "storybook": "start-storybook -p 6006"
+    },
+    "prettier": {},
+    "dependencies": {
+        "@Bowriverstudio/documentation": "^0.1.6",
+        "@emotion/babel-preset-css-prop": "^10.0.27",
+        "@frontity/core": "^1.9.0",
+        "@frontity/html2react": "^1.4.0",
+        "@frontity/tiny-router": "^1.2.2",
+        "@frontity/wp-source": "^1.9.1",
+        "@sentry/react": "^5.27.0",
+        "@storybook/addon-a11y": "^6.0.26",
+        "@tailwindcss/ui": "^0.6.2",
+        "frontity": "^1.12.0",
+        "react-icons": "^3.11.0",
+        "react-json-pretty": "^2.2.0",
+        "react-swipeable": "^5.5.1",
+        "styled-components": "^5.2.0",
+        "tailwindcss-aspect-ratio": "^3.0.0",
+        "tailwindcss-gradients": "^3.0.0",
+        "tailwindcss-typography": "^3.1.0",
+        "twin.macro": "^1.10.0",
+        "yup": "^0.29.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-react": "^7.10.4",
+        "@babel/preset-typescript": "^7.10.4",
+        "@storybook/addon-actions": "^6.0.26",
+        "@storybook/addon-console": "^1.2.2",
+        "@storybook/addon-essentials": "^6.0.26",
+        "@storybook/addon-links": "^6.0.26",
+        "@storybook/react": "^6.0.26",
+        "@whitespace/storybook-addon-html": "^2.0.1",
+        "babel-eslint": "^10.1.0",
+        "babel-jest": "^26.5.2",
+        "babel-loader": "^8.1.0",
+        "babel-plugin-macros": "^2.8.0",
+        "eslint": "^7.10.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-react": "^7.21.3",
+        "eslint-plugin-react-hooks": "^4.1.2",
+        "fork-ts-checker-webpack-plugin": "^5.2.0",
+        "husky": "^4.3.0",
+        "jest": "^26.5.2",
+        "react-is": "^16.13.1",
+        "react-test-renderer": "^16.13.1",
+        "storybook-formik": "^2.1.2",
+        "ts-loader": "^8.0.4"
+    },
+    "jest": {
+        "transformIgnorePatterns": [
+            "/node_modules/(?!(@frontity/components|@frontity/type-declarations|@frontity/connect|@frontity/error|@frontity/hooks)/).*"
+        ],
+        "moduleNameMapper": {
+            "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+            "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+        },
+        "transform": {
+            "^.+\\.[tj]sx?$": "babel-jest",
+            "^.+\\.mdx$": "@storybook/addon-docs/jest-transform-mdx"
+        }
+    },
+    "babelMacros": {
+        "twin": {
+            "preset": "styled-components",
+            "autoCssProp": true,
+            "debugProp": true
+        }
+    }
+}

@@ -1,0 +1,31 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+import { CloseIcon, HamburgerIcon } from "../menu-icon";
+
+<Meta title="packages/mars-theme/components/menu-icon" />
+
+# Menu Icons
+
+<Canvas>
+  <Story name="Closed Icon">
+	  <div style={{background : '#1f38c5', padding: '15px'}}>
+      <CloseIcon color="white" size="24px" />
+    </div>
+  </Story>
+</Canvas>
+
+
+<Canvas>
+  <Story name="Hamburger Icon">
+	  <div style={{background : '#1f38c5', padding: '15px'}}>
+      <HamburgerIcon color="white" size="24px" />
+    </div>
+  </Story>
+</Canvas>
+
+## Props

@@ -1,0 +1,39 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+import Header from "../header";
+// import { withFrontityStore } from "../../utils/frontityUtils.js";
+import { withFrontityStore } from "@testingUtils/frontityUtils.js";
+const headerNatureStory = () =>
+  withFrontityStore({ router: { link: "/contact-us/" } })(<Header />);
+const defaultHeader = () => withFrontityStore({})(<Header />);
+
+<Meta title="packages/mars-theme/components/header" component={Header} />
+
+# Header
+
+<Description of={Header} />
+
+## Default
+
+<Canvas>
+  <Story name="HeaderDefault">{defaultHeader()}</Story>
+</Canvas>
+
+## Contact us Selected
+
+Note here contact has the attribute aria-current="page"
+
+<Canvas>
+  <Story name="HeaderNatureSelected">{headerNatureStory()}</Story>
+</Canvas>
+
+## Mobile
+
+## Props
+
+<ArgsTable of={Header} />

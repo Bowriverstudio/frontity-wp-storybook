@@ -1,0 +1,26 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+import Post from "../post";
+import { withFrontityStore } from "@testingUtils/frontityUtils";
+const postStory = () => withFrontityStore({})(<Post />);
+
+<Meta title="packages/mars-theme/components/post" component={Post} />
+
+# Post
+
+<Description of={Post} />
+
+## Default
+
+<Canvas>
+  <Story name="Post">{postStory()}</Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Post} />

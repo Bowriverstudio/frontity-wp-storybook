@@ -1,0 +1,39 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+import FeaturedMedia from "../featured-media";
+import data from "@testingUtils/sample-data/62.js";
+const stateOverrides = { source: { attachment: { 62: { ...data } } } };
+
+import { withFrontityStore } from "@testingUtils/frontityUtils";
+const sampleImage = () =>
+  withFrontityStore(stateOverrides)(<FeaturedMedia id={62} />);
+
+<Meta
+  title="packages/mars-theme/components/FeaturedMedia"
+  component={FeaturedMedia}
+/>
+
+# FeaturedMedia
+
+<Description of={FeaturedMedia} />
+
+##
+
+<Canvas>
+  <Story name="FeaturedMedia">
+    <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+      <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+        <div class="flex-shrink-0">{sampleImage()}</div>
+      </div>
+    </div>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={FeaturedMedia} />

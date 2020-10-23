@@ -1,0 +1,30 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+import Menu from "../menu";
+import { withFrontityStore } from "@testingUtils/frontityUtils";
+const defaultHeader = () => withFrontityStore({})(<Menu />);
+
+<Meta title="packages/mars-theme/components/menu" component={Menu} />
+
+# Header
+
+<Description of={Menu} />
+
+## Default
+
+<Canvas>
+    <Story name="Menu Default">  
+        <div style={{background : '#1f38c5', padding: '15px'}}>
+             {defaultHeader()}  
+        </div>
+    </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Menu} />

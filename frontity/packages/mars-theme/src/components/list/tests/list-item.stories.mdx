@@ -1,0 +1,52 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+import Item from "../list-item";
+import itemData from "@testingUtils/sample-data/item";
+import sourceData from "@testingUtils/sample-data/source";
+import { withFrontityStore } from "@testingUtils/frontityUtils";
+const listItemWithFeaturedImageStory = () =>
+  withFrontityStore(
+    {
+      theme: { featured: { showOnList: true } },
+      source: { ...sourceData }
+    },
+    {},
+    { item: { ...itemData } }
+  )(<Item />);
+const listItemWithoutFeaturedImageStory = () =>
+  withFrontityStore(
+    {
+      theme: { featured: { showOnList: false } },
+      source: { ...sourceData }
+    },
+    {},
+    { item: { ...itemData } }
+  )(<Item />);
+const sampleItem = () => withFrontityStore({})(<Item />);
+
+<Meta title="packages/mars-theme/components/list/list-item" component={Item} />
+
+# Item
+
+<Description of={Item} />
+
+## List Item with Featured Image
+
+<Canvas>
+  <Story name="ListItem">{listItemWithFeaturedImageStory()}</Story>
+</Canvas>
+
+## List Item with Featuredou Image
+
+<Canvas>
+  <Story name="ListItemwithout">{listItemWithoutFeaturedImageStory()}</Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Item} />

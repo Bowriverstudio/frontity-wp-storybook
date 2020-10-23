@@ -1,0 +1,40 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+
+<Meta title="Documentation/storybook" />
+
+# Storybook
+
+I find storybook works well with edge cases. Right now I'm doing a woocommerce site, and have a few mockups for the client to pick. Also with the designer I make a really long title, and longer / shorter descriptions to show them how it renders.
+
+I have a pretty decent sample of storybook with my Formik components. I did not include it here, because it depends on tailwind and I wanted to make this as simple as possible.
+
+## Issues
+
+### Pagination Component
+
+I get the error: Uncaught TypeError: state.source.get is not a function
+
+These two lines fail in storybook. The workarounds I found are hacks and not real soutions.
+
+```js
+const { next, previous } = state.source.get(state.router.link);
+
+// Pre-fetch the the next page if it hasn't been fetched yet.
+useEffect(() => {
+  if (next) actions.source.fetch(next);
+}, []);
+```
+
+### Post
+
+This is not working in storybook.
+
+```js
+const Html2React = libraries.html2react.Component;
+```

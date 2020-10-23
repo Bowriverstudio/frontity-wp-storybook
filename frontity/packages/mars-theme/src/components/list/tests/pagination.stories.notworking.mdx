@@ -1,0 +1,37 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Description
+} from "@storybook/addon-docs/blocks";
+import Pagination from "../pagination";
+import sourceData from "@testingUtils/sample-data/source";
+import { withFrontityStore } from "@testingUtils/frontityUtils";
+const paginationStory = () =>
+  withFrontityStore(
+    {
+      theme: { featured: { showOnList: true } },
+      source: { ...sourceData }
+    },
+    {}
+  )(<Pagination />);
+
+<Meta
+  title="packages/mars-theme/components/list/Pagination"
+  component={Pagination}
+/>
+
+# Pagination
+
+<Description of={Pagination} />
+
+#
+
+<Canvas>
+  <Story name="Pagination">{paginationStory()}</Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Pagination} />
